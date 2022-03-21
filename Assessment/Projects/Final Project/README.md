@@ -2,7 +2,9 @@
 ![IMG_9280](https://user-images.githubusercontent.com/91799774/159279771-13f4581a-402f-41ab-a52d-b95e7a5b55b8.JPG)
 
 Youtube link: https://youtu.be/GpoTbInmQ1w
+
 Arduino library for ML model: casa0018/Assessment/Projects/Final Project/ei-firedetect_transfer-arduino-1.0.14.zip
+
 Arduino sketch for Arduino Nano 33 BLE: casa0018/Assessment/Projects/Final Project/fire_detector.ino
 
 ## Project overview
