@@ -2,6 +2,8 @@
 ![IMG_9280](https://user-images.githubusercontent.com/91799774/159279771-13f4581a-402f-41ab-a52d-b95e7a5b55b8.JPG)
 
 Youtube link: https://youtu.be/GpoTbInmQ1w
+Arduino library for ML model: casa0018/Assessment/Projects/Final Project/ei-firedetect_transfer-arduino-1.0.14.zip
+Arduino sketch for Arduino Nano 33 BLE: casa0018/Assessment/Projects/Final Project/fire_detector.ino
 
 ## Project overview
 Over 18 million hectares were destroyed in the infamous Australia bushfires in 2019 to 2020 alone. Owing to the presence of kindling in the forests, a small fire quickly spreads destroying all flora and fauna in its path. Countries have utilised various setups to detect these fires ranging from drones, satellites, cameras to manned fire towers.
