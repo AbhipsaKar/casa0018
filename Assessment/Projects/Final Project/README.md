@@ -1,5 +1,6 @@
 # Forest Fire detector using Transfer learning image classification method.
-![IMG_9280](https://user-images.githubusercontent.com/91799774/159279771-13f4581a-402f-41ab-a52d-b95e7a5b55b8.JPG)
+![image](https://user-images.githubusercontent.com/91799774/159302414-b98c1d13-df3e-4b44-ab7f-17b26907f7da.png)
+
 
 Youtube link: https://youtu.be/GpoTbInmQ1w
 
@@ -105,6 +106,8 @@ To test the performance of the ML model, a test run was performed on Edge impuls
 
 The rate of accuracy was good at 96.54%. After deploying the model on the Arduino Nano, I used images infront on the camera because it is not possible
 to simulate forest fire scenario.
+![image](https://user-images.githubusercontent.com/91799774/159302384-6c1db2c1-54ec-4bd1-8e1d-feb578ac0a10.png)
+
 
 The test images were tested and the results compared in indoor vs outdoor environment and light vs dark environment.
 The time of day did not seem to affect the reading even though some of the classification was done on the laptop which had its own brightness for display.
