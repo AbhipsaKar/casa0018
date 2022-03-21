@@ -8,10 +8,10 @@ Arduino library for ML model: https://github.com/AbhipsaKar/casa0018/blob/main/A
 Arduino sketch for Arduino Nano 33 BLE: https://github.com/AbhipsaKar/casa0018/blob/main/Assessment/Projects/Final%20Project/fire_detector.ino
 
 ## Project overview
-Over 18 million hectares were destroyed in the infamous Australia bushfires in 2019 to 2020 alone. Owing to the presence of kindling in the forests, a small fire quickly spreads destroying all flora and fauna in its path. Countries have utilised various setups to detect these fires ranging from drones, satellites, cameras to manned fire towers.
+Over 18 million hectares were destroyed in the infamous Australia bushfires in 2019 to 2020 alone( Sorri, 2021). Owing to the presence of kindling in the forests, a small fire quickly spreads destroying all flora and fauna in its path. Countries have utilised various setups to detect these fires ranging from drones, satellites, cameras to manned fire towers(Knaus,2020).
 Croatia, a country constantly affected by wildfires is now setting up video surveillance networks to detect these forest fires before they become uncontrollable. 
-However, a major issue in the existing systems is the fact that the video footage from these systems must be reviewed manually which could result in a delay in the fire detection. 
-Additionally, as forest fires usually occur in uninhabited areas, 
+However, a major issue in the existing systems is the fact that the video footage from these systems must be reviewed manually which could result in a delay in the fire detection( Sorri, 2021). 
+Additionally, as forest fires usually occur in uninhabited areas, it takes more time for the fire to be detected and handled. Temperature or satellite based fire alerts are often inadequate because they can only detect the fire once it becomes big.
 
 It would , therefore, be beneficial to add an additional deep learning unit to the exisiting video surveillance networks that could send an alert to the nearest Fire station as soon as it detects a fire. The idea of the system is to ultimately have a GPS enabled PTZ camera at each node which is Wifi enabled to send a fire alert to MQTT. The fire stations, which would have subscribed to the MQTT topic would get an alert from a camera node as soon as it detects fire, along with its gps coordinates.
 
@@ -20,7 +20,7 @@ Can Image classification deep learning model be used to detect fires with reliab
 
 ## Project Design
 ### Data collection
-The initial set of data was downloaded from Kaggle website which contained labelled data for 2 categories: Fire and Not Fire.
+The initial set of data was downloaded from Kaggle website(Saied, 2020) which contained labelled data for 2 categories: Fire and Not Fire.
 There were 968 images in total(724 Fire images and 244 Not Fire images)
 Observations on the dataset:
 1. Dataset covered multiple forest types.
@@ -31,7 +31,7 @@ Observations on the dataset:
 
 On using this dataset, although the resulting accuracy was good, in practical testing, the system classified most items as Fire. 
 This was because the number of Not fire images was too low compared to the number of Fire images.
-An additional set of images was downloaded from images.cv website to supplement the 'Not fire' dataset.
+An additional set of images was downloaded from images.cv(Image datasets for Computer Vision and machine learning) website to supplement the 'Not fire' dataset.
 The final number of data items collected was 1793(1119 'Not fire' images and 724 'Fire' images)
 
 ### Model Design
@@ -87,6 +87,18 @@ In the next step, Arduino library was chosen as the deployment option to generat
 Comparing the confusion matrix, the the rate of false negatives increases to 10.7%(6.0 + 4.7). However, this model still performs better than the initial model in Design iteration 1.
 ![image](https://user-images.githubusercontent.com/91799774/159278765-6e0d450a-4290-4dd9-848f-272068a5a254.png)
 
+### Model build
+The build includes:
+1. Tiny ML kit(Arduino Nano 33 BLE, OV7675 camera, Tiny ML shield)
+2. 2 red LEDs
+3. 3d printed Tower enclosure
+4. 3d printed dragon(The dragon for 3D-printable Modular Castle playset,2017)
+
+![image](https://user-images.githubusercontent.com/91799774/159295183-1a9debfe-43e9-4b08-804e-b4e3eb66d1ab.png)
+
+The Arduino nano 33 BLE contains onboard red and blue LEDs which are used to denote the classification of final output: Red when 'Fire', Blue when 'Not Fire'.
+2 Additional Red Leds have been added externally to be able to signal the Fire alert from outside the enclosure.
+
 ### Documentation of experiments and results 
 To test the performance of the ML model, a test run was performed on Edge impulse to classify unseen pictures from the collected dataset.
 ![image](https://user-images.githubusercontent.com/91799774/159280186-fcc1715d-ae58-41b9-b3c9-c33707617b7d.png)
@@ -117,3 +129,10 @@ In this method, the last 10 classification readings of the model were saved in a
 Further experimentation:
 The rate of false negatives could possibly be decreased further by finding a model design which was bigger than this design but still small enough to run on the Arduino Nano 33.
 To be able to send a fire alert though MQTT, it would be required to use a different board that supports Wifi. Also, to ensure that the fire alert was indeed identified correctly, the setup could send a picture of the scene for manual review. This would prevent Fire station personnel to prepare and reach the scene for a false alert.
+
+### References:
+1. Anon, 2017. The dragon for 3D-printable Modular Castle playset. Download free STL file The Dragon for 3D-printable Modular Castle Playset • 3D print template ・ Cults. Available at: https://cults3d.com/en/3d-model/game/the-dragon-for-3d-printable-modular-castle-playset [Accessed March 21, 2022]. 
+2. Saied, A., 2020. Fire dataset. Kaggle. Available at: https://www.kaggle.com/datasets/phylake1337/fire-dataset/ [Accessed March 21, 2022]. 
+3. Image datasets for Computer Vision and machine learning. Download Forest image classifcation dataset for your computer vision project. Available at: https://images.cv/dataset/forest-image-classification-dataset [Accessed March 21, 2022]. 
+4. Knaus, C., 2020. Early warning: human detectors, drones and the race to control Australia’s extreme bushfires. The guardian. Available at: https://www.theguardian.com/australia-news/2020/oct/25/early-warning-human-detectors-drones-and-the-race-to-control-australias-extreme-bushfires.[Accessed March 21, 2022]. 
+5.  Sorri, A., 2021. Fighting fire with cameras – an innovative and logical step forward. Secure Insights. Available at: https://www.axis.com/blog/secure-insights/camera-fire-fighting/ [Accessed March 21, 2022]. 
