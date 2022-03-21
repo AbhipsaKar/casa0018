@@ -25,7 +25,7 @@ There were 968 images in total(724 Fire images and 244 Not Fire images)
 Observations on the dataset:
 1. Dataset covered multiple forest types.
 2. Dataset contains images of varied exposure levels.
-3. Not fire dataset contained images that could be easily confused with Fire: Ex: Sunrise/Sunset, Autumn scene, sunny day
+3. Not fire dataset contained images that could be easily confused with Fire. For Ex: Sunrise/Sunset, Autumn scene, sunny day
 4. Fire dataset contained images from forest as well as buildings or cities.
 5. The colour of Fire in fire dataset was mostly red with black smoke.
 
@@ -99,7 +99,7 @@ The build includes:
 The Arduino nano 33 BLE contains onboard red and blue LEDs which are used to denote the classification of final output: Red when 'Fire', Blue when 'Not Fire'.
 2 Additional Red Leds have been added externally to be able to signal the Fire alert from outside the enclosure.
 
-### Documentation of experiments and results 
+### Experiments and results 
 To test the performance of the ML model, a test run was performed on Edge impulse to classify unseen pictures from the collected dataset.
 ![image](https://user-images.githubusercontent.com/91799774/159280186-fcc1715d-ae58-41b9-b3c9-c33707617b7d.png)
 
@@ -118,8 +118,8 @@ In this method, the last 10 classification readings of the model were saved in a
 ![image](https://user-images.githubusercontent.com/91799774/159286060-a3482aa1-f4eb-4ffc-be09-3609a599c890.png)
 
 
-### Critical reflection and learning from experiments 
-(observations from experiments, factors incluencing results, potential improvements, weaknesses, feedback from reviews) 
+### Critical reflection 
+
  There were some observations during the testing process.
 1. It was required to Point the camera directly to the fire scene. In a real world scenario, we would need a PTZ camera to capture pictures from every angle.
 2. It was observed that every time the setup starts, the first few readings misclassify the environment as 'Fire'. Also, When the exposure level in the environment suddenly changes, the model misclassifies the env as 'Fire'.
@@ -128,7 +128,7 @@ In this method, the last 10 classification readings of the model were saved in a
 
 Further experimentation:
 The rate of false negatives could possibly be decreased further by finding a model design which was bigger than this design but still small enough to run on the Arduino Nano 33.
-To be able to send a fire alert though MQTT, it would be required to use a different board that supports Wifi. Also, to ensure that the fire alert was indeed identified correctly, the setup could send a picture of the scene for manual review. This would prevent Fire station personnel to prepare and reach the scene for a false alert.
+To be able to send a fire alert though MQTT, it would be required to use a different board that supports Wifi. Also, to ensure that the fire alert was indeed identified correctly, the setup could send a picture of the scene for manual review. This would prevent Fire station personnel to prepare and reach the scene just to find out that it was a false alert.
 
 ### References:
 1. Anon, 2017. The dragon for 3D-printable Modular Castle playset. Download free STL file The Dragon for 3D-printable Modular Castle Playset • 3D print template ・ Cults. Available at: https://cults3d.com/en/3d-model/game/the-dragon-for-3d-printable-modular-castle-playset [Accessed March 21, 2022]. 
