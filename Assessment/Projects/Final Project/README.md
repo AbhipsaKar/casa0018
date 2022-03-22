@@ -4,6 +4,8 @@
 
 Youtube link: https://youtu.be/GpoTbInmQ1w
 
+Edge impulse project: https://studio.edgeimpulse.com/studio/86904/
+
 Arduino library for ML model: https://github.com/AbhipsaKar/casa0018/blob/main/Assessment/Projects/Final%20Project/ei-firedetect_transfer-arduino-1.0.14.zip
 
 Arduino sketch for Arduino Nano 33 BLE: https://github.com/AbhipsaKar/casa0018/blob/main/Assessment/Projects/Final%20Project/fire_detector.ino
@@ -76,8 +78,11 @@ The model uses the following data augmentation methods:
 1. Flips the image randomly
 2. Increase the image size, then randomly crop it down to the original dimensions
 3. Vary the brightness of the image
+All of these augmentation methods are relevant when trying to detect Fire which has no fixed shape.
 
 The model uses Adam optimiser and 'Categorical_crossentropy' loss function to converge.
+
+The number of epochs at 20 and learning rate of 0.0005 is found to be optimum based on experimentation on the model.
 
 After training the base model with the updated parameters, the model was retrained for new set of data.
 ![image](https://user-images.githubusercontent.com/91799774/159277243-0493f5a8-7b90-4f4b-9a75-64c43c8e75c8.png)
@@ -129,7 +134,12 @@ In this method, the last 10 classification readings of the model were saved in a
 3. As the model is trained on forest images, the indoor lights are often misclassified as 'Fire'. So are objects with reddish color. This might give faulty readings in Autumn when leaves change color even though the 'Not fire' dataset contains forests in Autumn which are correctly classified during the test phase.
 4. Small lights like lighter fire(fires of white colour) are not recognised by the model.
 
-Further experimentation:
+#### Key learning:
+1. Memory is a major contrainst for embedded ML projects. It is required to find a balance between model accuracy and model size to be able to deploy the model in a real world scenario. In this case, although the Arduino nano 33 BLE have 1 MB RAM, it can only support a model of around 60Kb or less.
+2. The key metrics that determine the success of the ML model vary depending on the nature of the project. For example, in this project the rate of false negatives was much more significant that false positives. This is because the effect of detecting Fire as 'Not fire' is much more severe than vice versa.
+3. There are multiple model deployment methods depending on the working platform. It was found that the Edge impulse library created for arduino was compatible with Arduino Nano 33 containing a camera of OV767X type. However, if the hardware were different(i.e different board or different camera type), the deployment process and deployment constrainsts would vary accordingly. 
+ 
+#### Further experimentation:
 The rate of false negatives could possibly be decreased further by finding a model design which was bigger than this design but still small enough to run on the Arduino Nano 33.
 To be able to send a fire alert though MQTT, it would be required to use a different board that supports Wifi. Also, to ensure that the fire alert was indeed identified correctly, the setup could send a picture of the scene for manual review. This would prevent Fire station personnel to prepare and reach the scene just to find out that it was a false alert.
 
