@@ -2,7 +2,7 @@
 ![image](https://user-images.githubusercontent.com/91799774/159302414-b98c1d13-df3e-4b44-ab7f-17b26907f7da.png)
 
 
-Youtube link: https://youtu.be/GpoTbInmQ1w
+Youtube link: https://youtu.be/vTjy-qHdXjo
 
 Edge impulse project: https://studio.edgeimpulse.com/studio/86904/
 
