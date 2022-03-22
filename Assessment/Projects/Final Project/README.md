@@ -115,7 +115,7 @@ to simulate forest fire scenario.
 
 
 The test images were tested and the results compared in indoor vs outdoor environment and light vs dark environment.
-The time of day did not seem to affect the reading even though some of the classification was done on the laptop which had its own brightness for display.
+The time of day did not seem to affect the reading although some of the classification was done on the laptop which had its own brightness for display and could have affected the classification.
 There was some difference in reading between indoor and outdoor scenes. Very bright scenes were sometimes misclassified as Fire although the exact correlation between the level of brightness and classification could not be determined.
 <img width="483" alt="Test" src="https://user-images.githubusercontent.com/91799774/159281216-4bc8bf9a-3d12-4ee6-afca-6ba775d4ee4f.PNG">
 <img width="524" alt="test01" src="https://user-images.githubusercontent.com/91799774/159281288-472b75bf-73d3-4ae7-ad20-2c1736ec0711.PNG">
