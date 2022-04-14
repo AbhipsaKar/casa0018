@@ -76,7 +76,7 @@ Additional dense layer of 8 neurons:
 Update learning rate to 0.0007
 ![image](https://user-images.githubusercontent.com/91799774/163435642-35e41eee-12a8-4a16-9371-82baba6011a0.png)
 
-With a good accuracy of 96.8% and low false negatives rate of 2%, this model has produced the best results by far.
+With a good accuracy of 96.8% and low false negatives rate of 2%[unquantised float32 version], this model has produced the best results by far.
 The model resizes each input image to 96*96 RGB array i.e tensor with input shape [96,96,3]
 The model uses the following data augmentation methods:
 1. Flips the image randomly
