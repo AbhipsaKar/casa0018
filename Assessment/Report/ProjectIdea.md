@@ -1,26 +1,15 @@
-# Project Idea
+# Forest Fire detector -Deep learning
 
-## Title: Your snappy project title
+## Title: Remote intelligent fire detector with Edge impulse 
 
 ---
 
 ## Idea: 
 Complete the sentence:
 
-**I want my project to be able to (1) .................... using the (2)............... on my (3)...........**
+**I want my project to be able to detect forest fires using the images from my Arduino camera on my Arduino Nano BLE 33**
 
+## Youtube link: https://youtu.be/vTjy-qHdXjo
+## Edge impulse project: https://studio.edgeimpulse.com/studio/86904/
+## Project Page: https://github.com/AbhipsaKar/casa0018/tree/main/Assessment/Projects/Final%20Project
 
-1. *e.g. detect when i say "wotcha", recognise a bird in a live camera stream etc*
-2. *e.g. camera, microphone, accelerometer etc*
-3. *e.g. arduino, laptop, RPi etc*
-
----
-
-## Data:
-Also think about: 
-What data will you use and what data will you capture?
-
-
-----
-
-Note: in addition to editing the text here, also remember to add the above information to one sticky note on the Miro board.
