@@ -72,7 +72,11 @@ Data augmentation
 Additional dense layer of 8 neurons:
 ![image](https://user-images.githubusercontent.com/91799774/159276440-0fad5706-fe02-423c-b1d7-fc713784e50f.png)
 
-With a good accuracy of 97% and low false negatives rate of 4.9%, this model has produced the best results by far.
+#### Design iteration 4:
+Update learning rate to 0.0007
+![image](https://user-images.githubusercontent.com/91799774/163435642-35e41eee-12a8-4a16-9371-82baba6011a0.png)
+
+With a good accuracy of 96.8% and low false negatives rate of 2%, this model has produced the best results by far.
 The model resizes each input image to 96*96 RGB array i.e tensor with input shape [96,96,3]
 The model uses the following data augmentation methods:
 1. Flips the image randomly
@@ -90,8 +94,9 @@ After training the base model with the updated parameters, the model was retrain
 In the next step, Arduino library was chosen as the deployment option to generate a quantised int8 model weighing 62 kb
 ![image](https://user-images.githubusercontent.com/91799774/159278482-17b09e71-68af-4896-ad61-eb94d0de6822.png)
 
-Comparing the confusion matrix, the the rate of false negatives increases to 10.7%(6.0 + 4.7). However, this model still performs better than the initial model in Design iteration 1.
-![image](https://user-images.githubusercontent.com/91799774/159278765-6e0d450a-4290-4dd9-848f-272068a5a254.png)
+Comparing the confusion matrix, the the rate of false negatives increases to 8.7%(6.0 + 2.7). However, this model still performs better than the initial model in Design iteration 1.
+![image](https://user-images.githubusercontent.com/91799774/163436232-f8bde861-56f3-4c92-b95c-5cf08f993b2a.png)
+
 
 ### Model build
 The build includes:
@@ -107,9 +112,9 @@ The Arduino nano 33 BLE contains onboard red and blue LEDs which are used to den
 
 ### Experiments and results 
 To test the performance of the ML model, a test run was performed on Edge impulse to classify unseen pictures from the collected dataset.
-![image](https://user-images.githubusercontent.com/91799774/159280186-fcc1715d-ae58-41b9-b3c9-c33707617b7d.png)
+![image](https://user-images.githubusercontent.com/91799774/163436468-bb040008-1a31-42cc-b78f-9137ca2a8548.png)
 
-The rate of accuracy was good at 96.54%. After deploying the model on the Arduino Nano, I used images infront on the camera because it is not possible
+The rate of accuracy was good at 97.07%. After deploying the model on the Arduino Nano, I used images infront on the camera because it is not possible
 to simulate forest fire scenario.
 ![image](https://user-images.githubusercontent.com/91799774/159302384-6c1db2c1-54ec-4bd1-8e1d-feb578ac0a10.png)
 
