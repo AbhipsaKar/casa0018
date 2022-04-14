@@ -65,6 +65,8 @@ After failing to deploy my own CNN model which weighed 500 kb and other transfer
 ![image](https://user-images.githubusercontent.com/91799774/163423860-bd97e1fa-721c-4a8b-8bba-ba55624e7371.png)
 <figcaption><i><h6>Figure 10: Base Model architecture</h6></i></figcaption>
 
+The false negative rate generated from the resulting model was very high at 15.7%. To reduce the same, an additional dense layer of 8 neurons was added to generate the below model(Figure 11).
+
 ![image](https://user-images.githubusercontent.com/91799774/163423882-cb0e7223-ab27-4f7d-b6ef-9a813719d98a.png)
 <figcaption><i><h6>Figure 11: Transfer learning model architecture</h6></i></figcaption>
 
