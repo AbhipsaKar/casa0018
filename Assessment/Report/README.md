@@ -13,6 +13,8 @@ The research landscape in intelligent optical fire detection systems include exp
 ## Research Question
 Can Image classification deep learning model be used to identify forest fires using low resolution color images taken from video camera?
 
+<p></p>
+
 ## Application Overview
 
  ![image](https://user-images.githubusercontent.com/91799774/163422014-e40df6ae-ba7e-48d1-9b08-5d3da150ebe0.png)
@@ -146,9 +148,13 @@ Finally, a test was conducted in the outdoor scene where the scene could only be
 
 The next stage of texting could include testing in the real forest with a PTZ camera to test the actual efficacy. The testing process is incomplete due to lack of real outdoor fire scenes.
 
-## Conclusion
-The system, although performs well would need substantial investments and are best suited to improve pre-existing optical fire detectors. The idea of the system is to ultimately have a GPS enabled Pan-Tilt-Zoom camera at each connected sensor node to send a fire alert to MQTT. The fire stations subscribed to the MQTT topic would get an alert from a camera node as soon as it detects fire, along with the node’s exact location. The research on hybrid sensor networks suggest that multiple sensors (camera and temperature sensor) are more successful by overcoming individual sensor limitations. Hence, additional sensors could be used to supplement this system to improve accuracy.
+<br/><br/>
+<p></p>
 
+## Conclusion
+The system, although performs well would need substantial investments and are best suited to improve pre-existing optical fire detectors. The idea of the system is to ultimately have a GPS enabled Pan-Tilt-Zoom camera at each connected sensor node to send a fire alert to MQTT. The fire stations subscribed to the MQTT topic would get an alert from a camera node as soon as it detects fire, along with the node’s exact location. The review on fire detection systems(Alkhatib, 2014) concludes that hybrid sensor networks (camera and temperature sensor) perform best by overcoming individual sensor limitations. Hence, additional sensors could be used to supplement this system to improve accuracy.
+
+<br/>
 
 ## Bibliography
 <ul>
